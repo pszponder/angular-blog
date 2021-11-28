@@ -6,6 +6,7 @@ import { NavigationComponent } from './components/navigation/navigation.componen
 import { TodoAddComponent } from './components/todo-add/todo-add.component';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoItemComponent } from './components/todo-list/todo-item/todo-item.component';
+import { FilterButtonComponent } from './components/navigation/filter-button/filter-button.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { TodoItemComponent } from './components/todo-list/todo-item/todo-item.co
     NavigationComponent,
     TodoAddComponent,
     TodoListComponent,
-    TodoItemComponent
+    TodoItemComponent,
+    FilterButtonComponent
   ],
   imports: [
     BrowserModule

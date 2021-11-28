@@ -1,7 +1,21 @@
 <h1 class="ui header center aligned">Angular ToDo App</h1>
 <nav class="ui secondary pointing menu">
-  <button class="item active">All</button>
-  <button class="item">Important</button>
-  <button class="item">Pending</button>
-  <button class="item">Complete</button>
+  <app-filter-button (click)="filter = 'all'" [toggleActive]="filter === 'all'"
+    >All</app-filter-button
+  >
+  <app-filter-button
+    (click)="filter = 'important'"
+    [toggleActive]="filter === 'important'"
+    >Important</app-filter-button
+  >
+  <app-filter-button
+    (click)="filter = 'pending'"
+    [toggleActive]="filter === 'pending'"
+    >Pending</app-filter-button
+  >
+  <app-filter-button
+    (click)="filter = 'complete'"
+    [toggleActive]="filter === 'complete'"
+    >Complete</app-filter-button
+  >
 </nav>
