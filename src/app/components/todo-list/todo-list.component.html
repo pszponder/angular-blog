@@ -1,5 +1,3 @@
 <div class="ui segments">
-  <app-todo-item></app-todo-item>
-  <app-todo-item></app-todo-item>
-  <app-todo-item></app-todo-item>
+  <app-todo-item *ngFor="let todo of todos" [todo]="todo"></app-todo-item>
 </div>
