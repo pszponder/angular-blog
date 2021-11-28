@@ -15,16 +15,16 @@
   <div class="todoItem">
     <h3 class="ui header">{{ todo.description }}</h3>
     <div class="ui small basic icon buttons">
-      <button class="ui button">
+      <button class="ui button" (click)="onActionClicked('important', todo.id)">
         <i class="exclamation icon"></i>
       </button>
-      <button class="ui button">
+      <button class="ui button" (click)="onActionClicked('edit', todo.id)">
         <i class="edit icon"></i>
       </button>
-      <button class="ui button">
+      <button class="ui button" (click)="onActionClicked('complete', todo.id)">
         <i class="check icon"></i>
       </button>
-      <button class="ui button">
+      <button class="ui button" (click)="onActionClicked('delete', todo.id)">
         <i class="delete icon"></i>
       </button>
     </div>

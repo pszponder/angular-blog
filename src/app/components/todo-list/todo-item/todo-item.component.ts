@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Todo } from 'src/app/shared/todo';
 
 @Component({
@@ -8,8 +8,19 @@ import { Todo } from 'src/app/shared/todo';
 })
 export class TodoItemComponent implements OnInit {
   @Input() todo!: Todo;
+  @Output() actionClicked = new EventEmitter<{
+    action: string;
+    todoId: number;
+  }>();
 
   constructor() {}
 
   ngOnInit(): void {}
+
+  onActionClicked(action: string, todoId: number) {
+    this.actionClicked.emit({
+      action: action,
+      todoId: todoId,
+    });
+  }
 }
