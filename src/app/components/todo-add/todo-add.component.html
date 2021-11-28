@@ -1,4 +1,9 @@
 <div class="addTodo ui fluid action input">
-  <input type="text" placeholder="Add ToDo..." ref="{inputRef}" />
-  <button class="ui button">Add</button>
+  <input type="text" placeholder="Add ToDo..." #newTodo />
+  <button
+    class="ui button"
+    (click)="addTodo(newTodo.value); newTodo.value = ''"
+  >
+    Add
+  </button>
 </div>
