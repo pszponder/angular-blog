@@ -7,6 +7,15 @@ import { Todo } from '../shared/todo';
 export class TodosService {
   constructor() {}
 
+  // Specify a filter which will be used to sort the todos
+  // Must be in an object so that a reference to it is passed in by the service
+  _filter = { category: 'all' };
+
+  get filter() {
+    return this._filter;
+  }
+
+  // Initial list of todos
   _todoList: Todo[] = [
     {
       id: 0,
@@ -44,9 +53,6 @@ export class TodosService {
   get todoList() {
     return this._todoList;
   }
-
-  // TODO: Determine if we need this
-  // Setter for _todoList
 
   // Add a TODO item to the list
   addTodo(description: string): void {

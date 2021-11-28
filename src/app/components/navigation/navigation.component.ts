@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TodosService } from 'src/app/services/todos.service';
 
 @Component({
   selector: 'app-navigation',
@@ -6,10 +7,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./navigation.component.css'],
 })
 export class NavigationComponent implements OnInit {
-  // initialize filter variable which controls which filter is "active"
-  filter = 'all';
+  filter = { category: 'all' };
 
-  constructor() {}
+  constructor(private todosService: TodosService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.filter = this.todosService.filter;
+  }
 }
