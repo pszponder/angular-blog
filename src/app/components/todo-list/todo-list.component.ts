@@ -30,4 +30,23 @@ export class TodoListComponent implements OnInit {
       return this.todos;
     }
   }
+
+  handleActionClicked(event: { action: string; todoId: number }) {
+    switch (event.action) {
+      case 'important':
+        this.todosService.toggleTodoImportant(event.todoId);
+        break;
+      case 'edit':
+        console.log('edit');
+        break;
+      case 'complete':
+        this.todosService.toggleTodoComplete(event.todoId);
+        break;
+      case 'delete':
+        console.log('delete');
+        break;
+      default:
+        break;
+    }
+  }
 }

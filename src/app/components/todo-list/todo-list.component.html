@@ -2,5 +2,6 @@
   <app-todo-item
     *ngFor="let todo of filterTodos(filter.category)"
     [todo]="todo"
+    (actionClicked)="handleActionClicked($event)"
   ></app-todo-item>
 </div>
