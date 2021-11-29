@@ -74,17 +74,32 @@ export class TodosService {
 
   // Toggle the important property of a Todo of specified index
   toggleTodoImportant(todoId: number): void {
-    this._todoList[todoId].important = !this._todoList[todoId].important;
+    for (const todo of this._todoList) {
+      if (todo.id === todoId) {
+        todo.important = !todo.important;
+        break;
+      }
+    }
   }
 
   // Toggle the complete property of a Todo of specified index
   toggleTodoComplete(todoId: number): void {
-    this._todoList[todoId].complete = !this._todoList[todoId].complete;
+    for (const todo of this._todoList) {
+      if (todo.id === todoId) {
+        todo.complete = !todo.complete;
+        break;
+      }
+    }
   }
 
   // Remove a Todo at a specified index
   removeTodo(todoId: number): void {
-    this._todoList.splice(todoId, 1);
+    for (let i = 0; i < this._todoList.length; i++) {
+      if (this._todoList[i].id === todoId) {
+        this._todoList.splice(i, 1);
+        break;
+      }
+    }
   }
 
   // Clear the TODO data set
