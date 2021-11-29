@@ -2,7 +2,7 @@
   <input type="text" placeholder="Add ToDo..." #newTodo />
   <button
     class="ui button"
-    (click)="addTodo(newTodo.value); newTodo.value = ''"
+    (click)="onAddTodo(newTodo.value); newTodo.value = ''"
   >
     Add
   </button>

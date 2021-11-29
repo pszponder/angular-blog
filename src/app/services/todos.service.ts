@@ -15,6 +15,8 @@ export class TodosService {
     return this._filter;
   }
 
+  counter = 5;
+
   // Initial list of todos
   _todoList: Todo[] = [
     {
@@ -56,12 +58,13 @@ export class TodosService {
 
   // Add a TODO item to the list
   addTodo(description: string): void {
-    this._todoList.push({
-      id: this._todoList.length,
+    const newTodo = {
+      id: this.counter++,
       description: description,
       important: false,
       complete: false,
-    });
+    };
+    this._todoList.push(newTodo);
   }
 
   // Edit a TODO item description at a specific index
@@ -80,7 +83,7 @@ export class TodosService {
   }
 
   // Remove a Todo at a specified index
-  RemoveTodo(todoId: number): void {
+  removeTodo(todoId: number): void {
     this._todoList.splice(todoId, 1);
   }
 

@@ -32,6 +32,7 @@ export class TodoListComponent implements OnInit {
   }
 
   handleActionClicked(event: { action: string; todoId: number }) {
+    console.log(event);
     switch (event.action) {
       case 'important':
         this.todosService.toggleTodoImportant(event.todoId);
@@ -44,6 +45,8 @@ export class TodoListComponent implements OnInit {
         break;
       case 'delete':
         console.log('delete');
+        console.log(event.todoId);
+        this.todosService.removeTodo(event.todoId);
         break;
       default:
         break;
